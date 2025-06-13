@@ -3,9 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('contactForm');
   const status = document.getElementById('formStatus');
 
-  const TELEGRAM_TOKEN = '7688136191:AAHOCJG3PhuAa20KP4ylOhn-91IaPLUPNSI';
-  const TELEGRAM_CHAT_ID = '1153681509';
-
   if (form) {
     form.addEventListener('submit', async (e) => {
       e.preventDefault(); // Prevent form submission
@@ -24,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Send to Telegram
       const telegramMsg = `New Portfolio Message:%0AName: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
-      const telegramUrl = `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage?chat_id=${TELEGRAM_CHAT_ID}&text=${telegramMsg}`;
+      const telegramUrl = `https://api.telegram.org/bot${CONFIG.TELEGRAM.TOKEN}/sendMessage?chat_id=${CONFIG.TELEGRAM.CHAT_ID}&text=${telegramMsg}`;
 
       try {
         const response = await fetch(telegramUrl);

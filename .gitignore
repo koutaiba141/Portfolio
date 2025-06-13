@@ -1,6 +1,9 @@
 # Configuration files with sensitive data
 js/config.js
 
+# Dependencies
+node_modules/
+
 # Environment files
 .env
 .env.local
@@ -9,6 +12,8 @@ js/config.js
 # IDE files
 .vscode/
 .idea/
+*.swp
+*.swo
 
 # OS files
 .DS_Store
